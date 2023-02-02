@@ -1,0 +1,58 @@
+[package]
+name = "bls-381"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+sightglass-api = "0.1"
+codec = { package = "parity-scale-codec", version = "3.0.0", features = [ "derive" ], default-features = false }
+scale-info = { version = "2.1.1", features = ["derive"], default-features = false }
+frame-support = { version = "4.0.0-dev",  default-features = false }
+sp-ark-bls12-381 = { version = "0.4.0", features = ["curve"], default-features = false }
+sp-ark-models = { version = "0.4.0", default-features = false }
+ark-bls12-381 = { version = "0.4.0", features = ["curve"], default-features = false }
+ark-serialize = { version = "0.4.0", default-features = false, features = [ "derive" ] }
+ark-ff = { version = "0.4.0", default-features = false }
+ark-ec = { version = "0.4.0", default-features = false }
+ark-std = { version = "0.4.0", default-features = false }
+sp-io = { version = "7.0.0", default-features = false }
+
+[package.metadata]
+wasm-name-section = false
+wasm-producers-section = false
+
+
+[features]
+default = [ "std" ]
+std = [
+	"codec/std",
+	"scale-info/std",
+	"frame-support/std",
+	"sp-ark-bls12-381/std", 
+	"sp-ark-models/std",
+	"ark-bls12-381/std",
+	"ark-serialize/std",
+	"ark-ff/std",
+	"ark-ec/std",
+	"ark-std/std",
+	"sp-io/std",
+]
+
+[workspace]
+
+[patch.crates-io]
+sp-core = { git = "https://github.com/paritytech/substrate.git", branch = "achimcc/arkworks-integration" }
+sp-runtime = { git = "https://github.com/paritytech/substrate.git", branch = "achimcc/arkworks-integration" }
+sp-std = { git = "https://github.com/paritytech/substrate.git", branch = "achimcc/arkworks-integration" }
+sp-io = { git = "https://github.com/paritytech/substrate.git", branch = "achimcc/arkworks-integration" }
+frame-benchmarking = { git = "https://github.com/paritytech/substrate.git", branch = "achimcc/arkworks-integration" }
+frame-support = { version = "4.0.0-dev", git = "https://github.com/paritytech/substrate.git", branch = "achimcc/arkworks-integration" }
+frame-system = { version = "4.0.0-dev", git = "https://github.com/paritytech/substrate.git", branch = "achimcc/arkworks-integration" }
+
+sp-ark-bls12-381 = { git = "https://github.com/paritytech/ark-substrate" }
+sp-ark-bls12-377 = { git = "https://github.com/paritytech/ark-substrate" }
+sp-ark-bw6-761 = { git = "https://github.com/paritytech/ark-substrate" }
+sp-ark-ed-on-bls12-377 = { git = "https://github.com/paritytech/ark-substrate" }
+sp-ark-ed-on-bls12-381 = { git = "https://github.com/paritytech/ark-substrate" }
+sp-ark-models = { git = "https://github.com/paritytech/ark-substrate" }
+ark-groth16 = { git = "https://github.com/achimcc/groth16", branch = "master" }

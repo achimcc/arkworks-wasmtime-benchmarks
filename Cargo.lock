@@ -2260,3 +2260,73 @@ checksum = "244c3741f4240ef46274860397c7c74e50eb23624996930e484c16679633a54c"
 dependencies = [
  "libc",
 ]
+
+[[patch.unused]]
+name = "ark-groth16"
+version = "0.3.0"
+source = "git+https://github.com/achimcc/groth16?branch=master#7cf952d6fe18ef995207214cdff71b787ae8655b"
+
+[[patch.unused]]
+name = "frame-benchmarking"
+version = "4.0.0-dev"
+source = "git+https://github.com/paritytech/substrate.git?branch=achimcc/arkworks-integration#609b8639d355daa3fd15f415d0687641b8062d5c"
+
+[[patch.unused]]
+name = "frame-support"
+version = "4.0.0-dev"
+source = "git+https://github.com/paritytech/substrate.git?branch=achimcc/arkworks-integration#609b8639d355daa3fd15f415d0687641b8062d5c"
+
+[[patch.unused]]
+name = "frame-system"
+version = "4.0.0-dev"
+source = "git+https://github.com/paritytech/substrate.git?branch=achimcc/arkworks-integration#609b8639d355daa3fd15f415d0687641b8062d5c"
+
+[[patch.unused]]
+name = "sp-ark-bls12-377"
+version = "0.4.0"
+source = "git+https://github.com/paritytech/ark-substrate#00333c8ecf57a4a85970b7363f0184363c9ef4eb"
+
+[[patch.unused]]
+name = "sp-ark-bls12-381"
+version = "0.4.0"
+source = "git+https://github.com/paritytech/ark-substrate#00333c8ecf57a4a85970b7363f0184363c9ef4eb"
+
+[[patch.unused]]
+name = "sp-ark-bw6-761"
+version = "0.4.0"
+source = "git+https://github.com/paritytech/ark-substrate#00333c8ecf57a4a85970b7363f0184363c9ef4eb"
+
+[[patch.unused]]
+name = "sp-ark-ed-on-bls12-377"
+version = "0.4.0"
+source = "git+https://github.com/paritytech/ark-substrate#00333c8ecf57a4a85970b7363f0184363c9ef4eb"
+
+[[patch.unused]]
+name = "sp-ark-ed-on-bls12-381"
+version = "0.4.0"
+source = "git+https://github.com/paritytech/ark-substrate#00333c8ecf57a4a85970b7363f0184363c9ef4eb"
+
+[[patch.unused]]
+name = "sp-ark-models"
+version = "0.4.0"
+source = "git+https://github.com/paritytech/ark-substrate#00333c8ecf57a4a85970b7363f0184363c9ef4eb"
+
+[[patch.unused]]
+name = "sp-core"
+version = "7.0.0"
+source = "git+https://github.com/paritytech/substrate.git?branch=achimcc/arkworks-integration#609b8639d355daa3fd15f415d0687641b8062d5c"
+
+[[patch.unused]]
+name = "sp-io"
+version = "7.0.0"
+source = "git+https://github.com/paritytech/substrate.git?branch=achimcc/arkworks-integration#609b8639d355daa3fd15f415d0687641b8062d5c"
+
+[[patch.unused]]
+name = "sp-runtime"
+version = "7.0.0"
+source = "git+https://github.com/paritytech/substrate.git?branch=achimcc/arkworks-integration#609b8639d355daa3fd15f415d0687641b8062d5c"
+
+[[patch.unused]]
+name = "sp-std"
+version = "5.0.0"
+source = "git+https://github.com/paritytech/substrate.git?branch=achimcc/arkworks-integration#609b8639d355daa3fd15f415d0687641b8062d5c"
