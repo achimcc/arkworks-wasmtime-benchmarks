@@ -3,7 +3,7 @@ use ark_ff::Fp;
 use ark_groth16::Groth16;
 use ark_snark::SNARK;
 use ark_std::io::Error;
-use ark_serialize::CanonicalDeserialize;
+use ark_serialize::{CanonicalDeserialize, Compress, Validate};
 
 static PROOF_SERIALIZED: &[u8] = &[
 	160, 91, 229, 15, 171, 87, 149, 187, 135, 132, 57, 58, 80, 69, 249, 135, 71, 23, 58, 210, 135,
