@@ -1,10 +1,9 @@
-use ark_std::{io::Error, UniformRand, test_rng};
+use ark_std::io::Error;
 use ark_ec::pairing::Pairing;
 use ark_ec::{Group, AffineRepr, models::short_weierstrass::SWCurveConfig};
 
 pub fn do_msm_g1(samples: u32) -> Result<(), Error> {
-	let mut rng = test_rng();
-	let g = ark_bw6_761::G1Affine::rand(&mut rng);
+	let g = ark_bw6_761::G1Affine::generator();
 	let v: Vec<_> = (0..samples).map(|_| g).collect();
 	let scalars: Vec<_> = (0..samples)
 		.map(|_| <ark_bw6_761::g1::Config as ark_ec::CurveConfig>::ScalarField::rand(&mut rng))
@@ -15,8 +14,7 @@ pub fn do_msm_g1(samples: u32) -> Result<(), Error> {
 }
 
 pub fn do_msm_g2(samples: u32) -> Result<(), Error> {
-	let mut rng = test_rng();
-	let g = ark_bw6_761::G2Affine::rand(&mut rng);
+	let g = ark_bw6_761::G2Affine::generator();
 	let v: Vec<_> = (0..samples).map(|_| g).collect();
 	let scalars: Vec<_> = (0..samples)
 		.map(|_| <ark_bw6_761::g1::Config as ark_ec::CurveConfig>::ScalarField::rand(&mut rng))

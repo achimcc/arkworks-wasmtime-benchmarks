@@ -1,14 +1,12 @@
 use ark_std::io::Error;
 use ark_ec::{Group, AffineRepr, models::twisted_edwards::TECurveConfig};
-use ark_std::{UniformRand, test_rng};
 
 pub fn do_msm(samples: u32) -> Result<(), Error> {
-	let mut rng = test_rng();
-	let g = ark_ed_on_bls12_377::EdwardsAffine::rand(&mut rng);
+	let g = ark_ed_on_bls12_377::EdwardsAffine::generator();
 	let v: Vec<_> = (0..samples).map(|_| g).collect();
 	let scalars: Vec<_> = (0..samples)
 		.map(|_| {
-			<ark_ed_on_bls12_377::EdwardsConfig as ark_ec::CurveConfig>::ScalarField::rand(&mut rng)
+			ark_ff::Fp::from(2u64)
 		})
 		.collect();
 	let _out =

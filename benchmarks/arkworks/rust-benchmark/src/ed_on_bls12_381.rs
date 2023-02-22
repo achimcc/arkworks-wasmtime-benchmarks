@@ -1,9 +1,8 @@
 use ark_ec::{CurveConfig, Group, AffineRepr, short_weierstrass::SWCurveConfig};
-use ark_std::{io::Error, UniformRand, test_rng};
+use ark_std::io::Error;
 
 pub fn do_msm_sw(samples: u32) -> Result<(), Error> {
-	let mut rng = test_rng();
-	let g = ark_ed_on_bls12_381::SWAffine::rand(&mut rng);
+	let g = ark_ed_on_bls12_381::SWAffine::generator();
 	let v: Vec<_> = (0..samples).map(|_| g).collect();
 	let scalars: Vec<_> = (0..samples)
 		.map(|_| <ark_ed_on_bls12_381::EdwardsConfig as CurveConfig>::ScalarField::rand(&mut rng))
@@ -13,8 +12,7 @@ pub fn do_msm_sw(samples: u32) -> Result<(), Error> {
 }
 
 pub fn do_msm_te(samples: u32) -> Result<(), Error> {
-	let mut rng = test_rng();
-	let g = ark_ed_on_bls12_381::EdwardsAffine::rand(&mut rng);
+	let g = ark_ed_on_bls12_381::EdwardsAffine::generator();
 	let v: Vec<_> = (0..samples).map(|_| g).collect();
 	let scalars: Vec<_> = (0..samples)
 		.map(|_| <ark_ed_on_bls12_381::EdwardsConfig as CurveConfig>::ScalarField::rand(&mut rng))
