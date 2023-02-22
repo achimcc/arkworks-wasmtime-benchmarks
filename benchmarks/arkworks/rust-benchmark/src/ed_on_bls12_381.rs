@@ -5,7 +5,7 @@ pub fn do_msm_sw(samples: u32) -> Result<(), Error> {
 	let g = ark_ed_on_bls12_381::SWAffine::generator();
 	let v: Vec<_> = (0..samples).map(|_| g).collect();
 	let scalars: Vec<_> = (0..samples)
-		.map(|_| <ark_ed_on_bls12_381::EdwardsConfig as CurveConfig>::ScalarField::rand(&mut rng))
+		.map(|_| ark_ff::Fp::from(2u64))
 		.collect();
 	let _out = <ark_ed_on_bls12_381::EdwardsConfig as SWCurveConfig>::msm(&v[..], &scalars[..]);
 	Ok(())
@@ -15,7 +15,7 @@ pub fn do_msm_te(samples: u32) -> Result<(), Error> {
 	let g = ark_ed_on_bls12_381::EdwardsAffine::generator();
 	let v: Vec<_> = (0..samples).map(|_| g).collect();
 	let scalars: Vec<_> = (0..samples)
-		.map(|_| <ark_ed_on_bls12_381::EdwardsConfig as CurveConfig>::ScalarField::rand(&mut rng))
+		.map(|_| ark_ff::Fp::from(2u64))
 		.collect();
 	let _out = <ark_ed_on_bls12_381::JubjubConfig as ark_ec::twisted_edwards::TECurveConfig>::msm(
 		&v[..],
