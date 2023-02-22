@@ -1,6 +1,5 @@
-use ark_ff::Fp;
 use ark_std::{io::Error, UniformRand};
-use ark_ec::{Group, AffineRepr};
+use ark_ec::{Group, AffineRepr, pairing::Pairing};
 
 pub fn do_pairing() -> Result<(), Error> {
 	let _ = ark_bls12_381::Bls12_381::multi_pairing(

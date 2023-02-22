@@ -8,9 +8,6 @@ mod ed_on_bls12_377;
 mod ed_on_bls12_381;
 mod groth16;
 
-use ark_std::io::Error;
-use ark_ec::{AffineRepr, pairing::Pairing};
-
 fn main() {
     let buffer = if std::env::var("WASM_BENCH_USE_SMALL_WORKLOAD").is_ok() {
         eprintln!("[blake3] hashing ./small.input");
@@ -34,11 +31,11 @@ fn main() {
     bench::end();
 
     bench::start();
-    let result = ed_on_bls12_377::do_pairing();
+    let result = ed_on_bls12_377::do_mul_affine();
     bench::end();
 
     bench::start();
-    let result = ed_on_bls12_381::do_pairing();
+    let result = ed_on_bls12_381::do_mul_affine_sw();
     bench::end();
 
     bench::start();

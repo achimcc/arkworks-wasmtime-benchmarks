@@ -2,7 +2,7 @@ use ark_bls12_381::{Bls12_381, Fr as BlsFr};
 use ark_ff::Fp;
 use ark_groth16::Groth16;
 use ark_snark::SNARK;
-use ark_std::{io::Error, vec::Vec};
+use ark_std::io::Error;
 use ark_serialize::CanonicalDeserialize;
 
 static PROOF_SERIALIZED: &[u8] = &[
