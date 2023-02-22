@@ -19,11 +19,11 @@ fn main() {
     eprintln!("[blake3] input size = {}", buffer.len());
 
     bench::start();
-    let result = bls12_377::do_pairing();
+    let result = bls12_381::do_pairing();
     bench::end();
 
     bench::start();
-    let result = bls12_381::do_pairing();
+    let result = bls12_377::do_pairing();
     bench::end();
 
     bench::start();
@@ -31,11 +31,11 @@ fn main() {
     bench::end();
 
     bench::start();
-    let result = ed_on_bls12_377::do_mul_affine();
+    let result = ed_on_bls12_381::do_mul_affine_sw();
     bench::end();
 
     bench::start();
-    let result = ed_on_bls12_381::do_mul_affine_sw();
+    let result = ed_on_bls12_377::do_mul_affine();
     bench::end();
 
     bench::start();

@@ -1,6 +1,6 @@
 use ark_std::io::Error;
 use ark_ec::{Group, AffineRepr};
-use ark_std::UniformRand;
+use ark_std::{UniformRand, test_rng};
 
 pub fn do_msm(samples: u32) -> Result<(), Error> {
 	let mut rng = test_rng();

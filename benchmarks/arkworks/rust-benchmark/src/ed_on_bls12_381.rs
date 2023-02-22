@@ -1,5 +1,5 @@
 use ark_ec::{CurveConfig, Group, AffineRepr};
-use ark_std::{io::Error, UniformRand};
+use ark_std::{io::Error, UniformRand, test_rng};
 
 pub fn do_msm_sw(samples: u32) -> Result<(), Error> {
 	let mut rng = test_rng();

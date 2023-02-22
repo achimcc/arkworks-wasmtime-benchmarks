@@ -1,4 +1,4 @@
-use ark_std::{io::Error, UniformRand};
+use ark_std::{io::Error, UniformRand, test_rng};
 use ark_ec::pairing::Pairing;
 use ark_ec::{Group, AffineRepr};
 
