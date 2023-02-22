@@ -1,5 +1,5 @@
 use ark_std::{io::Error, UniformRand, test_rng};
-use ark_ec::{Group, AffineRepr, pairing::Pairing};
+use ark_ec::{Group, AffineRepr, pairing::Pairing, models::short_weierstrass::SWCurveConfig};
 
 pub fn do_pairing() -> Result<(), Error> {
 	let _out = ark_bls12_377::Bls12_377::multi_pairing(

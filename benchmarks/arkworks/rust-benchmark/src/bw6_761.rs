@@ -1,6 +1,6 @@
 use ark_std::{io::Error, UniformRand, test_rng};
 use ark_ec::pairing::Pairing;
-use ark_ec::{Group, AffineRepr};
+use ark_ec::{Group, AffineRepr, models::short_weierstrass::SWCurveConfig};
 
 pub fn do_msm_g1(samples: u32) -> Result<(), Error> {
 	let mut rng = test_rng();
